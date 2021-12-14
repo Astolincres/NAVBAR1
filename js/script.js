@@ -18,6 +18,9 @@ sections.addEventListener('click', (e)=> {
 
 
 const check = ()=> {
+  sectionElements.forEach((section) => {
+    section.classList.remove('here');
+  });
   sectionElements.forEach((element) => {
     if(window.location.hash === element.hash) {
       element.classList.add('here');
@@ -28,4 +31,4 @@ const check = ()=> {
 };
 
 
-check();
+window.addEventListener('hashchange', check());
